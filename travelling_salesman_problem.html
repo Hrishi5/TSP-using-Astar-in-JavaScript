@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="tsp.css" rel="stylesheet" type="text/css"/>
+        <script src="jquery-3.2.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="angular.min.js"></script>
+        
+        
+        <script src="controller.js"></script>
+        
+    </head>
+        <body style="background-color:#34495e" ng-app="app" ng-controller="tspCtrl">
+  
+        <div class="container" style="margin:0;padding:0;width:100%">
+            <div style="display:block;position:fixed;background-color:#2c3e50;width:100%;font-size:20px;z-index:11;color:white;">
+                <ul class="nav">
+                <li class="nav-item" style="text-align:center">
+                <a href="#" class="nav-link" style="color:white;
+    cursor:default;">Travelling Salesman Problem</a>
+                </li>
+                </ul>
+            </div>
+            <div class="row" style="margin-top:6%;font-size:20px">
+            <div class="col-md-5">
+               <div align="right">A* algorithm</div>
+            </div>
+            <div class="col-md-2">
+               <div align="center">
+                            <div class="onoffswitch" align="center" >
+    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" ng-model="isHillClimbing" ng-click="show()">
+    <label class="onoffswitch-label" for="myonoffswitch"></label>
+    </div>               
+               </div>
+    
+            </div>
+    
+    <div class="col-md-4">
+        Hill climbing search
+    </div>
+    </div>
+        <div class="row" id="canvasParent" >
+           <div class="col-md-4">
+              <div align="center">
+               <Button style="width:50%;" class="btn btn-primary btn-block" ng-click="reset(true)">Reset</Button>   
+              </div>
+              <div align="center" >
+                  <Button style="width:50%;" class="btn btn-primary" ng-click="getSolution()">
+                      Get Solution
+                  </Button>
+              </div>
+               
+           </div>
+           <div class="col-md-4">
+            <canvas height="400" width="400" id="my-canvas" ng-click="onCanvasClick($event)"></canvas>   
+           </div>
+            <div class="col-md-4">
+                <div align="left" ng-show="isHillClimbing">
+                    <p>Iterations : {{iterations}}</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    
+    <div class="footer">
+    Developed By<br>Hrishikesh Deshpande    
+    </div>
+             
+        </body>
+    
+    
+
+</html>
